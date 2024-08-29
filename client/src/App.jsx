@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React, { useState } from 'react';
 import { StreamChat } from 'stream-chat';
 import { Chat } from 'stream-chat-react';
 import Cookies from 'universal-cookie';
@@ -11,20 +10,21 @@ import './App.css';
 const cookies = new Cookies();
 
 const apiKey = 'e765sxsmeccs';
-const authToken = cookies.get('token');
+const authToken = cookies.get("token");                   
 
 const client = StreamChat.getInstance(apiKey);
 
-if (authToken) {
+if(authToken) {
     client.connectUser({
-        token:cookies.get('token'),
-        username:cookies.get('username'),
-        fullName:cookies.get('fullName'),
-        phoneNumber:cookies.get('phoneNumber'),
-        avatarURL:cookies.get('avatarURL'),
-        hashedPassword:cookies.get('hashedPassword'),
-    })
+        id: cookies.get('userId'),
+        name: cookies.get('username'),
+        fullName: cookies.get('fullName'),
+        image: cookies.get('avatarURL'),
+        hashedPassword: cookies.get('hashedPassword'),
+        phoneNumber: cookies.get('phoneNumber'),
+    }, authToken)
 }
+
 const App = () => {
 
     if(!authToken) return <Auth/>
