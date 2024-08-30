@@ -11,14 +11,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^5.1.1",
+    "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "crypto": "^1.0.1",
-    "dotenv": "^16.4.5",
-    "express": "^4.19.2",
-    "getstream": "^8.4.1",
-    "nodemon": "^3.1.4",
-    "stream-chat": "^8.39.0",
-    "twilio": "^5.2.3"
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "getstream": "^7.2.10",
+    "nodemon": "^2.0.12",
+    "stream-chat": "^4.1.0",
+    "twilio": "^3.67.1"
   }
 }
